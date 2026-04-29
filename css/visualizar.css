@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Shrikhand&display=swap');
+
+:root {
+    --navy: #131212c4;
+    --navy-d: #01012e;
+    --navy-l: #0a0a8a;
+    --orange: #30f916;
+    --orange-hover: #1cbd06;
+    --orange-d: #0d8d09;
+    --orange-l: #ffedd5;
+    --bg: #0e0e0e;
+    --bg-card: #212221;
+    --text: #e1e1e7;
+    --text-m: #aaaaac;
+    --text-l: #9090a8;
+    --border: #0db307;
+    --shadow: 0 2px 16px rgba(2, 2, 74, .08);
+    --shadow-l: 0 8px 32px rgba(2, 2, 74, .14);
+    --radius: 12px;
+    --radius-s: 8px;
+    --transition: .22s cubic-bezier(.4, 0, .2, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+.container {
+    margin: 15% auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.card {
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 30px;
+    padding: 40px 60px;
+}
+
+.img-principal img {
+    height: 15vh;
+}
