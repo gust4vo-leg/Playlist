@@ -33,6 +33,11 @@ html {
     scroll-behavior: smooth;
 }
 
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
@@ -40,22 +45,139 @@ body {
     line-height: 1.6;
 }
 
+header {
+    padding: 20px;
+}
 
-.container {
-    margin: 15% auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
+header i {
+    font-size: 22px;
+    transition: var(--transition);
+}
+
+header i:hover {
+    color: var(--orange);
+}
+
+.player {
+  width: 100%;
+  max-width: 1000px;
+  margin:  auto;
+  display: flex;
+  gap: 30px;
 }
 
 .card {
-    border: 1px solid var(--border);
-    display: flex;
-    gap: 30px;
-    padding: 40px 60px;
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-l);
+  text-align: center;
 }
 
-.img-principal img {
-    height: 15vh;
+.capa {
+  width: 100%;
+  border-radius: var(--radius-s);
+  margin-bottom: 20px;
+}
+
+.info h2 {
+  font-size: 20px;
+}
+
+.info p {
+  color: var(--text-m);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.progresso {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+  font-size: 12px;
+  color: var(--text-l);
+}
+
+.barra {
+  flex: 1;
+  height: 4px;
+  background: var(--navy);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.barra-fill {
+  height: 100%;
+
+}
+
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.controles button {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 22px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 24px;
+}
+
+.controles button:hover {
+  color: var(--orange);
+}
+
+.detalhes {
+    max-width: 1200px;
+    width: 700px;
+    height: 30vh;
+    padding: 20px;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detalhes h4 {
+    color: var(--orange);
+    font-size: 16px;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.link a {
+    background: var(--navy);
+    padding: 12px;
+    border-radius: var(--radius);
+}
+
+.link i {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.detalhes i:hover {
+    color: var(--orange);
+}
+
+.genero {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.genero span {
+    background: var(--navy);
+    padding: 12px;
+    border-radius: var(--radius);
 }

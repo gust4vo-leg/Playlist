@@ -21,6 +21,9 @@
                         músicas cadastradas
                     </p>
                 </div>
+                <div class="pesquisar">
+                    <input type="text" placeholder="Buscar música"><i class="bi bi-search"></i>
+                </div>
                 <a href="#cadastro" class="btn-header">
                     <i class="bi bi-plus-lg"></i> Nova Música
                 </a>
@@ -48,26 +51,27 @@
                     </thead>
                     <tbody>
                         <tr>
-                        <td class="nome"></td>
-                        <td class="genero"></td>
-                        <td class="Cantor"></td>
-                        <td class="Duração"></td>
-                        <td class="link"></td>
+                            <td class="nome"></td>
+                            <td class="genero"></td>
+                            <td class="Cantor"></td>
+                            <td class="Duração"></td>
+                            <td class="link"></td>
 
-                        <td class="td-acao">
-                            <a href="visualizar.html" class="btn-acao btn-ver" title="Ver detalhes">
-                                <i class="bi bi-eye-fill"></i>
-                            </a>
+                            <td class="td-acao">
+                                <a href="#" class="btn-acao btn-editar"><i class="bi bi-pencil-square"></i></a>
+                                <a href="visualizar.html" class="btn-acao btn-ver" title="Ver detalhes">
+                                    <i class="bi bi-eye-fill"></i>
+                                </a>
 
-                            <!-- deletar -->
-                            <form method="POST">
-                                <input type="hidden" name="deletar_id">
-                                <button type="submit" class="btn-acao btn-del" title="Excluir">
-                                    <i class="bi bi-trash3-fill"></i>
-                                </button>
-                            </form>
-                            <!-- ------------ -->
-                        </td>
+                                <!-- deletar -->
+                                <form method="POST">
+                                    <input type="hidden" name="deletar_id">
+                                    <button type="submit" class="btn-acao btn-del" title="Excluir">
+                                        <i class="bi bi-trash3-fill"></i>
+                                    </button>
+                                </form>
+                                <!-- ------------ -->
+                            </td>
                         </tr>
                         <!-- <?php endforeach; ?> -->
                     </tbody>
@@ -95,46 +99,54 @@
         </div>
 
         <section>
-        <div class="container">
+            <div class="container">
 
-            <div class="form-card">
-                <h2>Cadastrar Novo Produto</h2>
+                <div class="form-card">
+                    <h2>Cadastrar Nova Música</h2>
 
-                <form action="cadastrar-produto.php" method="POST" id="cadastro">
-                    <div class="form-group">
-                        <label>Nome da Música</label>
-                        <input type="text" placeholder="Ex: Gostava Tanto De Você" name="nome">
-                    </div>
-
-                    <div class="row">
+                    <form action="cadastrar-produto.php" method="POST" id="cadastro">
                         <div class="form-group">
-                            <label>Gênero</label>
-                            <input type="text" placeholder="Ex: Sertanejo">
+                            <label>Nome da Música</label>
+                            <input type="text" placeholder="Ex: Gostava Tanto De Você" name="nome">
                         </div>
 
-                        <div class="form-group">
-                            <label>Foto da Música <span>(Opcional)</span></label>
-                            <input type="text" placeholder="Ex: https://br.freepik.com/fotos-vetores-gratis/capa-de-musica">
+                        <div class="row">
+                            <div class="form-group">
+                                <label>Gênero</label>
+                                <input type="text" placeholder="Ex: Sertanejo">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Foto da Música <span>(Opcional)</span></label>
+                                <input type="text"
+                                    placeholder="Ex: https://br.freepik.com/fotos-vetores-gratis/capa-de-musica">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label>Cantor</label>
-                        <input type="text" placeholder="Ex: Tim Maia" name="cantor">
-                    </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label>Cantor</label>
+                                <input type="text" placeholder="Ex: Tim Maia" name="cantor">
+                            </div>
 
-                    <div class="form-group"><label>Link da música</label>
-                        <input type="text" placeholder="Ex: https://youtu.be/rWRT4i43Lgs?si=cXPTZD1Bt0wTQV8A"
-                            name="imagem">
+                            <div class="form-group">
+                                <label>Duração</label>
+                                <input type="time" step="1" value="00:00:00">
+                            </div>
+                        </div>
 
-                    </div>
+                        <div class="form-group"><label>Link da música</label>
+                            <input type="text" placeholder="Ex: https://youtu.be/rWRT4i43Lgs?si=cXPTZD1Bt0wTQV8A"
+                                name="imagem">
 
-                    <button class="btn">Cadastrar Produto</button>
-                </form>
+                        </div>
+
+                        <button class="btn">Cadastrar Música</button>
+                    </form>
+                </div>
+
             </div>
-
-        </div>
-    </section>
+        </section>
     </main>
 </body>
 
