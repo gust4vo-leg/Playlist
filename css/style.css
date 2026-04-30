@@ -124,6 +124,7 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow);
     overflow-x: auto;
+    min-height: 45vh;
 }
 
 .tabela {
@@ -159,6 +160,18 @@ body {
 
 .tabela tbody td {
     padding: 14px 18px;
+}
+
+.nome i {
+    font-size: 22px;
+    background: var(--orange-d);
+    padding: 5px;
+    border-radius: var(--radius);
+    color: var(--text);
+}
+
+.nome i:hover {
+    background: var(--orange-hover);
 }
 
 .td-nome a {

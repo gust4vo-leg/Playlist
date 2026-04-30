@@ -1,3 +1,25 @@
+<?php 
+
+// require_once 'init.php';
+
+// $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+// $por_pagina = 5;
+// $inicio = ($pagina - 1) * $por_pagina;
+// $produtos = array_slice($_SESSION['musicas'], $inicio, $por_pagina);
+
+// if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deletar_id'])) {
+//     $del_id = $_POST['deletar_id'];
+//     $_SESSION['musicas'] = array_values(
+//         array_filter($_SESSION['musicas'], fn($p) => $p['id'] != $del_id)
+//     );
+
+//     $_SESSION['mensagem'] = "Produto excluído com sucesso!!";
+//     header('Location: tabela-tuch.php');
+//     exit;
+// }
+
+?>
+
 <!DOCTYPE html>
 <html lang="Pt-br">
 
@@ -17,7 +39,6 @@
                 <div>
                     <h1>Playlist</h1>
                     <p>
-                        <!-- <?php echo count($_SESSION['produtos']); ?>  -->
                         músicas cadastradas
                     </p>
                 </div>
@@ -29,13 +50,13 @@
                 </a>
             </div>
 
-            <!-- <?php if (isset($_SESSION['mensagem'])): ?> -->
-            <!-- <div class="alerta alerta-ok">
-                <i class="bi bi-check-circle-fill"></i> -->
-            <!-- <?php echo $_SESSION['mensagem']; ?> -->
-            <!-- </div> -->
-            <!-- <?php unset($_SESSION['mensagem']); ?>
-            <?php endif; ?> -->
+            <?php if (isset($_SESSION['mensagem'])): ?>
+            <div class="alerta alerta-ok">
+                <i class="bi bi-check-circle-fill"></i>
+            <?php echo $_SESSION['mensagem']; ?>
+            </div>
+            <?php unset($_SESSION['mensagem']); ?>
+            <?php endif; ?>
 
             <div class="tabela-wrapper">
                 <table class="tabela">
@@ -51,15 +72,17 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="nome"></td>
+                            <td class="nome">
+                                 <a href="#cadastro"><i class="bi bi-plus-lg"></i></a>
+                            </td>
                             <td class="genero"></td>
                             <td class="Cantor"></td>
                             <td class="Duração"></td>
                             <td class="link"></td>
 
                             <td class="td-acao">
-                                <a href="#" class="btn-acao btn-editar"><i class="bi bi-pencil-square"></i></a>
-                                <a href="visualizar.html" class="btn-acao btn-ver" title="Ver detalhes">
+                                <a href="visualizar.php" class="btn-acao btn-editar"><i class="bi bi-pencil-square"></i></a>
+                                <a href="visualizar.php" class="btn-acao btn-ver" title="Ver detalhes">
                                     <i class="bi bi-eye-fill"></i>
                                 </a>
 
@@ -73,71 +96,67 @@
                                 <!-- ------------ -->
                             </td>
                         </tr>
-                        <!-- <?php endforeach; ?> -->
+                    
                     </tbody>
                 </table>
             </div>
             <div class="paginacao">
                 <div class="seta">
-                    <!-- <?php if ($pagina > 1): ?> -->
                     <a class="seta" href="#"><i class="bi bi-arrow-left"></i></a>
-                    <!-- <?php endif; ?> -->
                 </div>
                 <div class="box-num">
-                    <!-- <?php for ($i = 1; $i <= $total_paginas; $i++): ?> -->
                     <a href="#">1</a>
-                    <!-- <?php endfor; ?> -->
                 </div>
                 <div class="seta">
-                    <!-- <?php if ($pagina < $total_paginas): ?> -->
                     <a class="seta" href="#">
                         <i class="bi bi-arrow-right"></i>
                     </a>
-                    <!-- <?php endif; ?> -->
                 </div>
             </div>
         </div>
 
-        <section>
+        <!-- CADASTRAR MÚSICA -->
+
+        <section id="cadastro">
             <div class="container">
 
                 <div class="form-card">
                     <h2>Cadastrar Nova Música</h2>
 
-                    <form action="cadastrar-produto.php" method="POST" id="cadastro">
+                    <form action="#" method="POST" id="cadastro">
                         <div class="form-group">
                             <label>Nome da Música</label>
-                            <input type="text" placeholder="Ex: Gostava Tanto De Você" name="nome">
+                            <input type="text" placeholder="Ex: Gostava Tanto De Você" name="nome" required>
                         </div>
 
                         <div class="row">
                             <div class="form-group">
                                 <label>Gênero</label>
-                                <input type="text" placeholder="Ex: Sertanejo">
+                                <input type="text" placeholder="Ex: Sertanejo" required name="genero">
                             </div>
 
                             <div class="form-group">
                                 <label>Foto da Música <span>(Opcional)</span></label>
                                 <input type="text"
-                                    placeholder="Ex: https://br.freepik.com/fotos-vetores-gratis/capa-de-musica">
+                                    placeholder="Ex: https://br.freepik.com/fotos-vetores-gratis/capa-de-musica" name="foto">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group">
                                 <label>Cantor</label>
-                                <input type="text" placeholder="Ex: Tim Maia" name="cantor">
+                                <input type="text" placeholder="Ex: Tim Maia" name="cantor" required>
                             </div>
 
                             <div class="form-group">
                                 <label>Duração</label>
-                                <input type="time" step="1" value="00:00:00">
+                                <input type="text" pattern="^[0-9](1,2):[0-5][0-9]$" placeholder="Ex: 01:56" name="duracao">
                             </div>
                         </div>
 
                         <div class="form-group"><label>Link da música</label>
                             <input type="text" placeholder="Ex: https://youtu.be/rWRT4i43Lgs?si=cXPTZD1Bt0wTQV8A"
-                                name="imagem">
+                                name="link">
 
                         </div>
 
