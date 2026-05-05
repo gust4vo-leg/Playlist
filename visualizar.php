@@ -98,6 +98,11 @@ $capa = $musica['capa'] ?: 'https://placehold.co/400x400/212221/30f916?text=🎵
                     <button><i class="bi bi-skip-end-fill"></i></button>
                 </div>
             <?php endif; ?>
+
+            <div class="image">
+                        <h4>Capa da Música</h4>
+                        <img src="imagens/nossa-praia.jpg" alt="capa">
+                    </div>
         </div>
 
         <div class="box-details">
@@ -112,6 +117,7 @@ $capa = $musica['capa'] ?: 'https://placehold.co/400x400/212221/30f916?text=🎵
                             Ouvir agora no YouTube <i class="bi bi-youtube"></i>
                         </a>
                     </div>
+
                 <?php endif; ?>
 
                 <div class="genero">

@@ -2,9 +2,9 @@
 
 $host     = "localhost";
 $port     = 3306;
-$dbname   = "playlist_senai";
-$username = "gusta";
-$password = "GustaT123";
+$dbname   = "db_teste";
+$username = "dev";
+$password = "123";
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password);
